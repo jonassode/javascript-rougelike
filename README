@@ -2,19 +2,39 @@ ROADMAP
 -------
 
 * VOID
-
-  -> New Graphics
-  -> Imagess that are largers than the floor tiles
-
+  In the beginning, there was nothing.
 
 * ALPHA 01
-  Ten Levels
+  x Hero is larger than tiles
+  game.js: Tiles can be vertical
+  Three Levels
+    Level Class?
   2 Types of Monsters
+    Monster Class
   A Boss
-  Minor Story 
-  Text at Every Level Entry
+  1 Second delay when monsters are moving
+
+* ALPHA 02
   Attack Animation
+    game.js ( show node temporarily fast )
+  Damage Indicators
+  Minor Story
+  3 Types of monsters
+  Text at every level entry
 
+* ALPHA 03
+  Directions of player and monsters
+  4 Types of monsters
+  Monsters drop stuff that you pick up
 
-  
+* ALPHA 04
+  Pathfinding
+  Background image
+  5 Types of monsters
+
+* ALPHA 05
+  Equipment
+  6 Types of monsters
+
+* ALPHA 06
 
