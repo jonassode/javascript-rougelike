@@ -6,45 +6,36 @@ ROADMAP
 
 * ALPHA 01
   x Hero is larger than tiles
-  game.js: Tiles can be vertical
-  Three Levels
-    Level Class?
-  2 Types of Monsters
-    Monster Class
-  A Boss
+  x game.js: Tiles can be vertical
+  x 2 Types of Monsters
+  x Monster Class
+
   1 Second delay when monsters are moving
 
-* ALPHA 02
+  Three Levels
+    Cemetary, Tomb and Hell
+    Level Class?
+    
+  A Boss - Nyarlanthotep
+  1 Second delay when monsters are moving
+
+* BACKLOG
+
   Attack Animation
-    game.js ( show node temporarily fast )
+    game.js ( show node temporarily fast , .animate() )
   Damage Indicators
   Minor Story
-  3 Types of monsters
   Text at every level entry
-
-* ALPHA 03
+  Movement of player and monsters
   Directions of player and monsters
-  4 Types of monsters
-  Monsters drop stuff that you pick up
-
-* ALPHA 04
   Pathfinding
-  Background image
-  5 Types of monsters
-
-* ALPHA 05
+  Background image?
+  Health bar on player and monsters
+    game.js: New object: bar
+  Move Around With Mouse
+  Monsters Drop Stuff that you can pick up
   Equipment
-  6 Types of monsters
-
-* ALPHA 06
   Fog Of War
-  
-* ALPHA 07
-
-* ALPHA 08
-
-* ALPHA 09 
-
-* ALPHA 10
+  Death Animation on player and monsters
 
 
