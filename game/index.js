@@ -25,8 +25,8 @@ window.onload = function() {
 	lb.node({
 		image : 'bg.png'
 	});
-	// Tile Map
 
+	// Tile Map
 	var tm = lb.tilemap({
 		cols : 100,
 		rows : 100,
@@ -44,6 +44,7 @@ window.onload = function() {
 	var player = NODES.player;
 	player.tilemap = tm;
 
+    // Create Map
 	make_map(tm, player);
 
 	// Create Textbox
@@ -75,14 +76,13 @@ window.onload = function() {
 		x : 798,
 		y : 426,
 		text : "Inventory"
-	}).onclick(function() { say('You have nothing.');
-	});
+	}).onclick(function() { say('You have nothing.'); });
+
 	lb.button({
 		x : 798,
 		y : 446,
 		text : "Help"
-	}).onclick(function() { Dialog(GAMEJS.TEXT, "Walk with W,A,S,D.\nSpace to investigate.\nm to show map.\nc to conjure familiar to fight by your side.");
-	});
+	}).onclick(function() { Dialog(GAMEJS.TEXT, "Walk with W,A,S,D.\nSpace to investigate.\nm to show map.\nc to conjure familiar to fight by your side.");	});
 
 	// Register movements
 	Index.screen.keypress('w', function() {
@@ -100,27 +100,7 @@ window.onload = function() {
 	Index.screen.keypress('m', function() {
 		Dialog(GAMEJS.TEXT, "This is the map.");
 	});
-	Index.screen.keypress('c', function() {
-		if(Index.player.mp >= 30) {
-			var tile = Index.player;
-			for(var ii = 0; ii < tile.interfaces.length; ii++) {
-				var a = tile.interfaces[ii].background();
 
-				if(a != null) {
-					if(tile.tilemap.get_tile(a.row, a.col) == null && a.walkable != false) {
-						tile.tilemap.place_tile(a.row, a.col, NODES.familiar_placer).onclick(function() {
-							this.click()
-						});
-						temp_tile = tile.tilemap.get_tile(a.row, a.col);
-						Index.temporary_tiles[Index.temporary_tiles.length] = temp_tile;
-					}
-				}
-			}
-			Index.screen.draw();
-		} else {
-			say('You dont have enough mp. Cost: 30');
-		}
-	});
 	Index.screen.keypress(' ', function() {
 		if(player.status == "ALIVE") {
 			tm.background(player.row, player.col).space(Index.player);
@@ -133,32 +113,18 @@ window.onload = function() {
 	Index.player = player;
 	Index.textbox = tb;
 
-	Preload('cave_floor.gif');
-	Preload('cave_wall.gif');
 	Preload('ground_0.gif');
 	Preload('ground_1.gif');
 	Preload('rat.gif');
 	Preload('man.gif');
-	Preload('town.gif');
-	Preload('heart.gif');
-	Preload('heart_empty.gif');
 	Preload('tree.gif');
-	Preload('tree_chopped.gif');
-	Preload('tree_empty.gif');
 	Preload('water.gif');
 	Preload('zombie.gif');
 	Preload('bg.png');
 	Preload('familiar.gif');
-	Preload('familiar_placer.gif');
 	Preload('tombstone.gif');
 	Preload('sign.gif');
 	Preload('deep_water.gif');
-	Preload('stone.gif');
-	Preload('stone_mined.gif');
-	Preload('planks.gif');
-	Preload('stones.gif');
-	Preload('build_planks.gif');
-	Preload('build_stones.gif');
 
 	_load(Index.screen);
 	Director.start_game();
@@ -345,7 +311,6 @@ function make_map(tm, player) {
 			say('This is You! Lord Zedrik of the old clan Borg. Zedrik Borg. What a wonderful name for such a wonderful man.');
 	});
 
-	tm.draw();
 }
 
 //
@@ -375,7 +340,7 @@ function add_unit_to_list(tile) {
 function _end_of_turn() {
 
 	// Clear Temprary Tiles
-	clear_temporary_tiles();
+	//clear_temporary_tiles();
 
 	// Decrease Food and Water
 	if(Index.player.moved == true) {
@@ -402,17 +367,17 @@ function _end_of_turn() {
 		Index.player.death();
 	}
 
-	//
+    // Draw main character
+    Index.screen.draw();
+
 	for(var i = 0; i < Index.enemies.length; i++) {
 		if(Index.enemies[i] != null) {
 			Index.enemies[i].move();
 		}
 	}
-
-	// Redraw stuff
-	Index.stats.draw();
-	Index.screen.draw();
-
+    
+    // Set timeout for drawing enemies, for dramatic effect
+    setTimeout(function() { Index.screen.draw(); }, 200);
 }
 
 // Override Methods

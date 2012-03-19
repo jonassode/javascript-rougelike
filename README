@@ -9,15 +9,13 @@ ROADMAP
   x game.js: Tiles can be vertical
   x 2 Types of Monsters
   x Monster Class
-
-  1 Second delay when monsters are moving
+  x 0.2 Second delay when monsters are moving
 
   Three Levels
     Cemetary, Tomb and Hell
     Level Class?
     
   A Boss - Nyarlanthotep
-  1 Second delay when monsters are moving
 
 * BACKLOG
 

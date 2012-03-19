@@ -32,7 +32,7 @@ var water = _tile({
 });
 
 var stairs = _tile({
-	image : 'cave_stairs.gif',
+	//image : 'cave_stairs.gif',
 });
 
 var monster = {};

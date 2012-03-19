@@ -551,8 +551,6 @@ function _node_class(attributes) {
 				if(!(newtilemapcol < 0) && !(newtilemapcol > (this.tilemap.cols - this.tilemap.visiblecols)) && (tilepositioncol == centercol)) {
 					this.tilemap.col = newtilemapcol;
 				}
-
-				this.tilemap.draw();
 			}
 		}
 	}
